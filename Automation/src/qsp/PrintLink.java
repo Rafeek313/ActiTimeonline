@@ -1,0 +1,23 @@
+package qsp;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+//WAS TO PRINT A TEXT OF A LINK "FORGOT YOUR PASSWORD" IN ACTITIME APPLICATION?
+public class PrintLink {
+	static {
+		System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
+	}
+
+	public static void main(String[] args) {
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://demo.actitime.com/login.do");
+		String TEXT = driver.findElement(By.xpath("//a[.='Forgot your password?']")).getText();
+		System.out.println(TEXT);
+		driver.close();
+	}
+
+}
